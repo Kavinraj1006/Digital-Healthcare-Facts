@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Healthcare Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff; /* White background */
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #f0f8ff; /* Light pastel blue background for the container */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background: #e6f7ff; /* Light pastel blue for facts */
+            border-radius: 5px;
+            transition: transform 0.3s, background-color 0.3s; /* Animation for hover effect */
+        }
+
+        li:hover {
+            transform: scale(1.02); /* Slightly enlarge on hover */
+            background-color: #cceeff; /* Change to a slightly darker pastel blue on hover */
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #add8e6; /* Pastel blue for the button */
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s; /* Animation for button hover */
+        }
+
+        button:hover {
+            background-color: #87ceeb; /* Darker pastel blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Facts About Digital Healthcare</h1>
+        <ul id="facts-list"></ul>
+        <button id="replace-facts">Replace Facts</button>
+    </div>
+    <script>
+        const facts = [
+            {
+                "fact": "Telemedicine Growth",
+                "description": "The use of telemedicine has surged, with a significant increase in virtual consultations, especially during the COVID-19 pandemic."
+            },
+            {
+                "fact": "Wearable Technology",
+                "description": "Devices like smartwatches and fitness trackers are increasingly used to monitor health metrics such as heart rate, sleep patterns, and physical activity."
+            },
+            {
+                "fact": "Electronic Health Records (EHRs)",
+                "description": "EHRs have become standard practice, allowing healthcare providers to access patient information quickly and improve care coordination."
+            },
+            {
+                "fact": "AI in Diagnostics",
+                "description": "Artificial intelligence is being utilized to analyze medical data, aiding in early diagnosis and personalized treatment plans."
+            },
+            {
+                "fact": "Mobile Health Apps",
+                "description": "There are thousands of mobile health applications available that help users manage chronic conditions, track medications, and promote healthy lifestyles."
+            },
+            {
+                "fact": "Data Security Concerns",
+                "description": "With the rise of digital healthcare, data security and patient privacy have become critical issues, leading to stricter regulations and compliance requirements."
+            },
+            {
+                "fact": "Remote Patient Monitoring",
+                "description": "Technologies that allow for remote monitoring of patients' health conditions are improving chronic disease management and reducing hospital readmissions."
+            },
+            {
+                "fact": "Patient Engagement",
+                "description": "Digital tools are enhancing patient engagement by providing access to health information and enabling communication with healthcare providers."
+            },
+            {
+                "fact": "Interoperability Challenges",
+                "description": "Despite advancements, many healthcare systems face challenges with interoperability, making it difficult to share data across different platforms."
+            },
+            {
+                "fact": "Cost Reduction",
+                "description": "Digital healthcare solutions have the potential to reduce healthcare costs by streamlining processes, improving efficiency, and minimizing unnecessary procedures."
+            }
+        ];
+
+        const newFacts = [
+            {
+                "fact": "Blockchain in Healthcare",
+                "description": "Blockchain technology is being explored for secure patient data sharing and improving the integrity of health records."
+            },
+            {
+                "fact": "3D Printing in Medicine",
+                "description": "3D printing is revolutionizing the production of medical devices and even human organs for transplants."
+            },
+            {
+                "fact": "Virtual Reality for Training",
+                "description": "Virtual reality is being used for training healthcare professionals in a risk-free environment."
+            },
+            {
+                "fact": "Genomics and Personalized Medicine",
+                "description": "Advancements in genomics are paving the way for personalized medicine tailored to individual genetic profiles."
+            },
+            {
+                "fact": "Health Data Analytics",
+                "description": "Data analytics is being used to predict health trends and improve patient outcomes."
+            },
+            {
+                "fact": "Chatbots in Healthcare",
+                "description": "Chatbots are being utilized for patient engagement, providing information and support 24/7."
+            },
+            {
+                "fact": "Digital Therapeutics",
+                "description": "Digital therapeutics are evidence-based therapeutic interventions delivered via software to prevent, manage, or treat medical disorders."
+            },
+            {
+                "fact": "Augmented Reality in Surgery",
+                "description": "Augmented reality is being used to assist surgeons during complex procedures by overlaying digital information onto the physical world."
+            },
+            {
+                "fact": "Remote Consultations",
+                "description": "Remote consultations are becoming more common, allowing patients to receive care from the comfort of their homes."
+            },
+            {
+                "fact": "AI in Drug Discovery",
+                "description": "Artificial intelligence is accelerating drug discovery processes, making it faster and more efficient."
+            }
+        ];
+
+        const factsList = document.getElementById('facts-list');
+        const replaceButton = document.getElementById('replace-facts');
+
+        function displayFacts(factsArray) {
+            factsList.innerHTML = ''; // Clear existing facts
+            factsArray.forEach(item => {
+                const li = document.createElement('li');
+                li.innerHTML = `<strong>${item.fact}</strong>: ${item.description}`;
+                factsList.appendChild(li);
+            });
+        }
+
+        // Initial display of facts
+        displayFacts(facts);
+
+        // Event listener for the button
+        replaceButton.addEventListener('click', () => {
+            displayFacts(newFacts); // Replace with new facts
+        });
+    </script>
+</body>
+</html>
